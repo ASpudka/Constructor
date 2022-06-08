@@ -62,7 +62,7 @@ function Kettle(maxVolume = 1000) {
   this.volume = 0;
 
   this.addWater = function (value) {
-    if ((this.volume + value <= maxVolume)) {
+    if (this.volume + value <= maxVolume) {
       this.volume += value;
     } else {
       console.log("rest water:", value - (this.maxVolume - this.volume));
@@ -70,7 +70,11 @@ function Kettle(maxVolume = 1000) {
     return this.volume;
   };
   this.drainWater = function (value) {
-    if ((this.volume - value > maxVolume)) this.volume -= value;
+    if (this.volume - value >= 0) {
+      this.volume -= value;
+    } else {
+      this.volume = 0;
+    }
     return this.volume;
   };
 }
