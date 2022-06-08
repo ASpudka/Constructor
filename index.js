@@ -57,27 +57,86 @@
 //     console.log(country1);
 //     console.log(country1.getDansity());
 
-function Kettle(maxVolume = 1000) {
-  this.maxVolume = maxVolume;
-  this.volume = 0;
+// function Kettle(maxVolume = 1000) {
+//   this.maxVolume = maxVolume;
+//   this.volume = 0;
 
-  this.addWater = function (value) {
-    if (this.volume + value <= maxVolume) {
-      this.volume += value;
-    } else {
-      console.log("rest water:", value - (this.maxVolume - this.volume));
-    }
-    return this.volume;
-  };
-  this.drainWater = function (value) {
-    if (this.volume - value >= 0) {
-      this.volume -= value;
-    } else {
-      this.volume = 0;
-    }
-    return this.volume;
-  };
+//   this.addWater = function (value) {
+//     if (this.volume + value <= maxVolume) {
+//       this.volume += value;
+//     } else {
+//       console.log("rest water:", value - (this.maxVolume - this.volume));
+//     }
+//     return this.volume;
+//   };
+//   this.drainWater = function (value) {
+//     if (this.volume - value >= 0) {
+//       this.volume -= value;
+//     } else {
+//       this.volume = 0;
+//     }
+//     return this.volume;
+//   };
+// }
+
+// const pot = new Kettle();
+// console.log(pot.addWater(200));
+
+// const number1 = 2
+// const number2 = 5
+// const sign = '+'
+// const getSum =function (number1, number2) {return number1+number2};
+// // const strResult = number1 + ' '+sign+ ' '+number2+ ' = '+ getSum(number1, number2)
+// const strResult = `${number1} ${sign} ${number2} = ${getSum(number1, number2)}`
+// console.log(strResult);
+
+// const getAdress = function (fileName = 'index.js') {return `${PROTOCOL}${LOCAL_SERVER}:${LOCAL_SERVER_PORT}/${fileName}`};
+// console.log(getAdress());
+
+// const user = {
+//   name:'Tom',
+//   age: 12 ,
+//   getWillBe = function (willAge = 5) {
+//     const yearsold = this.age + willAge
+//   return 'In ${willAge} years ${this.name} will be ${yearsold} years old'
+// },
+// }
+
+// // таблица умножения
+
+function creatMultipleTable(){
+const table ={};
+for (let i=1; i<=10; i++){
+  for (let j=1; j<=10; j++){
+    table[`${i} * ${j} =`]=i*j;
+  }
 }
+return table;
+}
+console.log(creatMultipleTable());
 
-const pot = new Kettle();
-console.log(pot.addWater(200));
+const multTable = creatMultipleTable();
+const getValue = function( table, str){
+  return table[str];
+};
+console.log(multTable['4 * 5 =']); //
+
+// создать семью
+function creat Famaly(){
+  const famaly ={};
+  const count = prompt ('how mach?');
+  for (let i=0; i<count; i++){
+    const name = prompt ('name?');
+    const role = prompt ('role?');
+    famaly[name]=role;
+  }
+  return famaly;
+};
+
+const showRange = function (max = 30, min = 20, number = 7) {
+  for (let i = max; i > min; i--) {
+    if (i % 7 === 0) {
+      console.log(i);
+    }
+  }
+};
